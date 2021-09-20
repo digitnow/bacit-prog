@@ -2,7 +2,7 @@
 Repo for arbeid relatert til introduksjon i programmering i BACIT/IT60.
 # 2
 Viktige poeng:
-* Hypotese 1: Det kan vises at ved hjelp av HTML5 og CSS (meget omfattende, se [1]) er det mulig å presentere digitalt en skisse/mockup på en brukbar måte. "Brukbar" må i denne sammenhengen defineres og testes.
+* Hypotese 1: Det kan vises at ved hjelp av HTML5 og CSS (meget omfattende, se [1] og [2]) er det mulig å presentere digitalt en skisse/mockup på en brukbar måte. "Brukbar" må i denne sammenhengen defineres og testes.
 
 ## Referanser
 [1] https://www.w3.org/Style/CSS/specs.en.html (sist sett 2021-09-20)
