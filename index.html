@@ -3,7 +3,10 @@
 <head>
    <!-- se https://developer.mozilla.org/en-US/docs/Glossary/character_encoding -->
   <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/rich-eatin" type="text/css"/>
     <style>
+    .body {
+        background: lightgreen; }
     .janis {
         border: 1px solid black;
         padding: 20px;
@@ -23,15 +26,33 @@
         text-transform: uppercase;
         font-family: arial;
         background: lightgrey;
+        #width: min-content;
       }
      .navn {
         color: green;
      }
+     .minfont {
+         font-family: 'RichEatinAllCaps';
+         font-weight: normal;
+         font-style: normal;
+         font-size: 1.8em;
+    }
+    .input-text {
+         background: lightblue;
+         font-size: 1.8em;
+         margin-bottom: 20px;
+    }
     </style>
 </head>
-<body>
+<body class="body">
 <!-- Fra demonstrasjon i IS-114 "Intro i Programmering
      20. september 2021 -->
+<form>
+    <label class="input-text" for="inavn">Navn:</label>
+    <input class="input-text" maxlength="10" type="text" navn="inavn" id="inavn">
+    <input class="input-text" type="text" navn="ifaar" id="ifaar">
+    <button type="button">Lagre</button>
+</form>
 <div class="container">
     <div class="janis">
         <p><b>Universitetet i Agder</b></p>
@@ -40,6 +61,9 @@
     <div class="niels">
         <p><strong>Universitetet i Agder</strong></p>
         <p class="navn">Niels Frederik Garmann-Johnsen</p>
+    </div>
+    <div class="minfont">
+        <p>Hei, jeg er RichEatinAllCaps.</p>
     </div>
 </div>
 
