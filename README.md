@@ -13,6 +13,8 @@ Viktige poeng:
 
 [2] https://www.chrisgeelhoed.com/problem-flexbox-css-grid-great/ (sist sett 2021-09-20)
 
+[3] https://github.com/digitnow/bacit-prog/tree/59281959be02ce1f2a33e28a394b817cdd3ec604 (tilstand etter 2)
+
 # 1 
 Illustrerte følgende poeng:
 * mellomrom
