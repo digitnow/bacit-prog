@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- se https://developer.mozilla.org/en-US/docs/Glossary/character_encoding -->
+    <meta charset="UTF-8">
+    <title>Eksperiment med JavaScript</title>
+</head>
+<body>
+<div style="font-size: 2.5em;" id="result"></div>
+<script>
+    function add(a,b) {
+        var c = 456;
+        return a+b;
+    }
+    console.log(c);
+    console.log(add(3,4));
+    let divresult = document.getElementById("result");
+    const a = 3;
+    let b = 'a';
+    let sum = add(a,b);
+    divresult.innerText = "3 + 4 = " + add(3,4);
+    divresult.innerText += `\n${a} + ${b} = ${sum}`;
+
+</script>
+</body>

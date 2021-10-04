@@ -26,7 +26,7 @@
         text-transform: uppercase;
         font-family: arial;
         background: lightgrey;
-        #width: min-content;
+        width: min-content;
       }
      .navn {
         color: green;
@@ -42,17 +42,30 @@
          font-size: 1.8em;
          margin-bottom: 20px;
     }
+    .form-style-02 {
+       background: lightgrey;
+         font-size: 1.8em;
+         margin-bottom: 20px;
+    }
     </style>
 </head>
 <body class="body">
 <!-- Fra demonstrasjon i IS-114 "Intro i Programmering
      20. september 2021 -->
-<form>
+<form method="get" target="_self">
     <label class="input-text" for="inavn">Navn:</label>
     <input class="input-text" maxlength="10" type="text" name="inavn" id="inavn">
     <input class="input-text" type="text" name="ifaar" id="ifaar">
-    <button type="button">Lagre</button>
+    <input type="hidden" value="8434jfelfler4r3fsvaerqeriiue">
+    <button class="input-text" type="submit">Lagre</button>
 </form>
+
+<form class="form-style-02" method="post" action="https://reqres.in/api/users">
+    <label for="name">Navn:</label>
+    <input maxlength="10" type="text" name="name" id="name">
+    <button type="submit">Lagre</button>
+</form>
+
 <div class="container">
     <div class="janis">
         <p><b>Universitetet i Agder</b></p>
