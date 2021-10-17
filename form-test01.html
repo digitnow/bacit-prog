@@ -25,13 +25,35 @@
 <body class="body">
 <!-- Fra demonstrasjon i IS-114 "Intro i Programmering 4. oktober 2021 -->
 <h3>Demonstrasjon av form-elementet</h3>
-<form method="post" action="https://reqres.in/api/users">
+<!-- <form method="post" action="https://reqres.in/api/users"> -->
+<form method="post">
     <div class="form-style">
         <label for="name">Navn:</label>
         <input class="input-style" maxlength="10" type="text" name="name" id="name">
         <button class="button-style" type="submit">Lagre</button>
     </div>
 </form>
+<script>
 
+//document.sessionStorage["form-data"] =  $('this').serialize();
+//document.location.href = 'another-page.html';
+// I another-page.html
+//
+
+    function onPost(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        console.log(data.entries());
+        const formJSON = Object.fromEntries(data.entries());
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+        // https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
+        sessionStorage["from-post"] = JSON.stringify(formJSON, null, 2);
+        location.href = 'sink.html';
+    }
+    const form = document.querySelector('form');
+    form.addEventListener('submit', onPost);
+
+    // Sjekk også https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage (2021-10-04)
+</script>
 </body>
 </html>
