@@ -8,18 +8,27 @@
 <div style="font-size: 2.5em;" id="result"></div>
 <script>
     let a = 1;
-    const b = 222;
+    const b = 222; // number, int, int32, int64, float
+    const navn = "Per"; // string
+    let bool = true; // false
+    // undefined, null
     function one() {
         //console.log("I one sitt rom før definisjon av a: " + a);
-        let a = 2;
+        //let a = 2;
         console.log("I one sitt rom a = : " + a);
         console.log("I one sitt rom b = " + b);
+        console.log("--------------------------");
         function oneA() {
            let a = 432;
            console.log("I oneA sitt rom a = : " + a);
         }
         // Oppgave: prøve å stoppe rekursivt kall etter 3 ganger
-        oneA();
+        //oneA();
+        if (a > 3) {
+            return;
+        }
+        a = a + 1;
+        one(); // rekursivt kall
         one();
     }
     function two() {
@@ -32,12 +41,12 @@
         // b = 3;
         console.log("I three sitt rom b = " + b);
     }
-    console.log("I globalt rom b = " + b);
+    //console.log("I globalt rom b = " + b);
     one();
-    two();
-    three();
-    a = 456;
-    console.log("Globalt rom a = : " + a);
+    //two();
+    //three();
+    //a = 456;
+    //console.log("Globalt rom a = : " + a);
 
 </script>
 </body>
