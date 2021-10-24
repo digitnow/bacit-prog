@@ -9,6 +9,7 @@
 <script>
     let a = 1;
     const b = 222;
+    let lenght = 0;
     function one() {
         //console.log("I one sitt rom før definisjon av a: " + a);
         let a = 2;
@@ -20,6 +21,10 @@
         }
         // Oppgave: prøve å stoppe rekursivt kall etter 3 ganger
         oneA();
+        length = length + 1;
+        if (length > 5) {
+            return;
+        }
         one();
     }
     function two() {
