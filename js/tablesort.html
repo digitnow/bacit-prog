@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabellsortering eksempel</title>
+    <style>
+     /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
+    </style>
+ <!--
+
+    [[[[[[[[     [[[[[[[[        [[[[   [[[[   [[[[  [[[[
+    [::::::[    [::[             [::[   [::[   [::[  [::[
+      [::[      [::[             [::[   [::[   [::[  [::[
+      [::[       [::::[   [[[[   [::[   [::[   [[[[[[[[[[
+      [::[          [::[         [::[   [::[         [::[
+    [::::::[        [::[         [::[   [::[         [::[
+    [[[[[[[[   [[[[[[[[          [[[[   [[[[         [[[[
+
+ -->
+</head>
+<body>
+  <!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
+  <!-- Stigende (asc) for alfabetet er A->Å, synkende (desc) Å->A -->
+  <table>
+      <thead>
+        <tr>
+          <th>GruppeID</th>
+          <th>Studentnavn</th>
+          <th>Oppgave</th>
+          <th>Evaluering</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>13A</td>
+            <td>Havre Bygg</td>
+            <td>Visittkort</td>
+            <td>80%</td>
+        </tr>
+        <tr>
+            <td>13A</td>
+            <td>Ris Rosin</td>
+            <td>HowWeRoll</td>
+            <td>65%</td>
+        </tr>
+        <tr>
+            <td>14B</td>
+            <td>Kaffe Te</td>
+            <td>HowWeRoll</td>
+            <td>95%</td>
+        </tr>
+        <tr>
+            <td>15A</td>
+            <td>Ryg Beste</td>
+            <td>Visittkort</td>
+            <td>85%</td>
+        </tr>
+      </tbody>
+  </table>
+  <table id="sort"></table>
+  <script>
+    // Hva trenger vi for å lage en sorteringsfunksjon?
+    // I avgrensningen trenger vi
+    // (1) referanse til tabellen
+    // (2) referanse til kolonne vi ønsker å sortere etter
+    // (3) synkende (desc) eller stigende (asc) orden
+    // function(table, column, acs = true)
+    // (1) få tak i tabellbody (tBody)
+    // (2) få tak i alle rader (holde rad samlet)
+    // (3) sortere rader etter kolonne i javascript variabel
+    // (4) tømmer tabellen i DOM-treet
+    // (5) legger inn strukturen fra javascript variabelen i DOM-treet
+    const table = document.querySelector("table");
+    const tBody = table.tBodies[0]; // (1)
+    const rows = Array.from(tBody.querySelectorAll("tr")); // (2)
+
+    // Arrow function
+    // sort((firstEl, secondEl) => { ... } )
+    const sortedRows = rows.sort((firstEl, secondEl) => {
+        console.log(firstEl);
+        console.log(secondEl);
+    });
+    //console.log(sortedRows);
+
+    // Arrays
+    let years = ["Ami", "Kurt", "Harry", "Zorro"];
+    const testSort = years.sort((firstEl, secondEl) => {
+        console.log(firstEl);
+        console.log(secondEl);
+    });
+    console.log(years.sort());
+
+  </script>
+</body>
+</html>
