@@ -1,12 +1,17 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eksperiment: navbar</title>
+    <title>Eksperiment: CSS Layout</title>
+    <!-- PREREQ01: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Introduction -->
     <style>
      /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
+     nav {
+        max-width: 1200px;
+        border: 1px solid;
+     }
     </style>
     <!--
 
@@ -19,12 +24,20 @@
        [[[[[[[[   [[[[[[[[          [[[[   [[[[         [[[[
 
     -->
+
 </head>
 <body>
 <!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
-
-<script>
-
-  </script>
+<header>
+    <p>I header</p>
+    <nav>
+        <p>I nav</p>
+    </nav>
+</header>
+<main>
+    I main
+    <section>I section</section>
+</main>
+<footer>I footer</footer>
 </body>
 </html>
