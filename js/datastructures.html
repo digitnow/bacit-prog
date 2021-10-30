@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TITTEL</title>
+    <style>
+     /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
+    </style>
+ <!--
+
+    [[[[[[[[     [[[[[[[[        [[[[   [[[[   [[[[  [[[[
+    [::::::[    [::[             [::[   [::[   [::[  [::[
+      [::[      [::[             [::[   [::[   [::[  [::[
+      [::[       [::::[   [[[[   [::[   [::[   [[[[[[[[[[
+      [::[          [::[         [::[   [::[         [::[
+    [::::::[        [::[         [::[   [::[         [::[
+    [[[[[[[[   [[[[[[[[          [[[[   [[[[         [[[[
+
+ -->
+</head>
+<body>
+  <!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
+  <p>Motta POST?</p>
+  <p>Ja, her er dataene:</p>
+  <p class="postdata"></p>
+  <script>
+   // Her skrives kode i JavaScript som "gir liv" til bilde på skjermen.
+   var formData = sessionStorage["from-post"];
+   const jsonObject = JSON.parse(formData);
+   console.log(jsonObject['name']);
+   const fromPost = document.getElementsByClassName("postdata");
+   fromPost[0].textContent = formData;
+  </script>
+</body>
+</html>
