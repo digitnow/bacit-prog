@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Eksperiment: navbar</title>
+    <style>
+     /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
+     .nav {
+  position:relative;
+  display:inline-block;
+  font-size:14px;
+  font-weight:900;
+}
+.nav-list {
+
+}
+.nav-item {
+  float:left;
+  *display:inline;
+  zoom:1;
+}
+.nav-item a {
+  display:block;
+  padding:15px 20px;
+  color:#FFF;
+  background:#34495E;
+}
+.nav-item:first-child a {
+  border-radius:5px 0 0 5px;
+}
+.nav-item:last-child a {
+  border-radius:0 5px 5px 0;
+}
+.nav-item a:hover {
+  background:#2C3E50;
+}
+
+.nav-mobile {
+  display:none; /* Hide from browsers that don't support media queries */
+  cursor:pointer;
+  position:absolute;
+  top:0;
+  right:0;
+  background:#34495E url(../img/nav.svg) no-repeat center center;
+  height:40px;
+  width:40px;
+  border-radius:5px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .nav {
+    width:100%;
+  }
+  .nav-item {
+    width:100%;
+    float:none;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .nav-mobile {
+    display:block;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+  .nav-list {
+    display:none;
+  }
+}
+
+/*
+        /* Custom, iPhone Retina */
+        @media only screen and (min-width : 320px) {
+
+        }
+
+        /* Extra Small Devices, Phones */
+        @media only screen and (min-width : 480px) {
+
+        }
+
+        /* Small Devices, Tablets */
+        @media only screen and (min-width : 768px) {
+
+        }
+
+        /* Medium Devices, Desktops */
+        @media only screen and (min-width : 992px) {
+
+        }
+
+        /* Large Devices, Wide Screens */
+        @media only screen and (min-width : 1200px) {
+
+        }
+*/
+    </style>
+    <!--
+
+       [[[[[[[[     [[[[[[[[        [[[[   [[[[   [[[[  [[[[
+       [::::::[    [::[             [::[   [::[   [::[  [::[
+         [::[      [::[             [::[   [::[   [::[  [::[
+         [::[       [::::[   [[[[   [::[   [::[   [[[[[[[[[[
+         [::[          [::[         [::[   [::[         [::[
+       [::::::[        [::[         [::[   [::[         [::[
+       [[[[[[[[   [[[[[[[[          [[[[   [[[[         [[[[
+
+    -->
+</head>
+<body style="background: #000;">
+<!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
+<nav class="nav">
+    <ul class="nav-list">
+        <li class="nav-item"><a href="#">Hjemmeside</a></li>
+        <li class="nav-item"><a href="#">Visittkort</a></li>
+        <li class="nav-item"><a href="#">HowWeRoll</a></li>
+        <li class="nav-item"><a href="#">IS-100</a></li>
+        <li class="nav-item"><a href="#">IS-104</a></li>
+    </ul>
+</nav>
+<script>
+// Create mobile element
+    var mobile = document.createElement('div');
+    mobile.className = 'nav-mobile';
+    document.querySelector('.nav').appendChild(mobile);
+
+    // hasClass
+    function hasClass(elem, className) {
+        return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+    }
+
+    // toggleClass
+    function toggleClass(elem, className) {
+        var newClass = ' ' + elem.className.replace(/[\t\r\n]/g, ' ') + ' ';
+        if (hasClass(elem, className)) {
+            while (newClass.indexOf(' ' + className + ' ') >= 0) {
+                newClass = newClass.replace(' ' + className + ' ', ' ');
+            }
+            elem.className = newClass.replace(/^\s+|\s+$/g, '');
+        } else {
+            elem.className += ' ' + className;
+        }
+    }
+
+    // Mobile nav function
+    var mobileNav = document.querySelector('.nav-mobile');
+    var toggle = document.querySelector('.nav-list');
+    mobileNav.onclick = function () {
+        toggleClass(this, 'nav-mobile-open');
+        toggleClass(toggle, 'nav-active');
+    };
+</script>
+</body>
+</html>
