@@ -4,9 +4,106 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eksperiment: navbar</title>
+    <title>Eksperiment: burgermenu vanilla js</title>
+    <!-- Basert på https://codepen.io/joesayegh/pen/jOEVPKO -->
     <style>
      /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
+     body {
+  margin:0;
+  background: #1e3c72;
+  background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);
+  background: linear-gradient(to right, #2a5298, #1e3c72);
+}
+#burger-menu {
+  cursor: pointer;
+  height: 27px;
+  width: 27px;
+  margin: 50px;
+  overflow: visible;
+  position: relative;
+  text-align: right;
+  z-index:2;
+}
+#burger-menu span,
+#burger-menu span:before,
+#burger-menu span:after {
+  background: #fff;
+  display: block;
+  height: 2px;
+  opacity: 1;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+}
+#burger-menu span:before,
+#burger-menu span:after {
+  content: "";
+}
+#burger-menu span {
+  right: 0px;
+  top: 13px;
+  width: 27px;
+}
+#burger-menu span:before {
+  left: 0px;
+  top: -10px;
+  width: 27px;
+}
+#burger-menu span:after {
+  left: 0px;
+  top: 10px;
+  width: 27px;
+}
+
+#burger-menu.close span {
+  transform: rotate(-45deg);
+  top: 13px;
+  width: 27px;
+}
+#burger-menu.close span:before {
+  top: 0px;
+  transform: rotate(90deg);
+  width: 27px;
+}
+#burger-menu.close span:after {
+  top: 0px;
+  left:0;
+  transform: rotate(90deg);
+  opacity:0;
+  width:0;
+}
+
+#menu{
+  z-index:1;
+  min-width:100%;
+  min-height:100%;
+  position: fixed;
+  top:0;
+  height:0;
+  visibility: hidden;
+  opacity: 0;
+  text-align:center;
+  padding-top:20px;
+  transition: all 0.3s ease-in-out;
+
+}
+
+#menu.overlay{
+  visibility: visible;
+  opacity: 1;
+  padding-top:100px;
+  background:rgba(0,0,0,0.5);
+}
+
+#menu li{
+  list-style:none;
+}
+#menu a{
+  color:#fff;
+  display:block;
+  font-size: 32px;
+  margin-bottom:30px;
+  text-decoration:none;
+}
     </style>
     <!--
 
@@ -20,21 +117,25 @@
 
     -->
 </head>
-<body style="background: #000;">
+<body>
 <!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
-<nav>
-    <div>
-        <div>
-            <svg width="30" height="30">
-                <path d="M0,5 30,5" stroke="#fff" stroke-width="4" />
-                <path d="M0,15 30,15" stroke="#fff" stroke-width="4" />
-                <path d="M0,25 30,25" stroke="#fff" stroke-width="4" />
-            </svg>
-        </div>
-    </div>
-</nav>
-<script>
+<div id="burger-menu">
+    <span></span>
+</div>
 
+<div id="menu">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+    </ul>
+</div>
+<script>
+var burgerMenu = document.getElementById('burger-menu');
+var overlay = document.getElementById('menu');
+burgerMenu.addEventListener('click',function(){
+  this.classList.toggle("close");
+  overlay.classList.toggle("overlay");
+});
 </script>
 </body>
 </html>
