@@ -62,7 +62,9 @@
    fem.ganger(2);
    console.log(fem.belop);
 
-   // Test funksjon
+   // Test funksjon (her skriver vi testrammeverk selv,
+   // men i mange rammeverk er den allerede implementert
+   // og kan eventuelt gjenbrukes).
    function assertEquals(value1, value2) {
      if (Number.parseFloat(value1) == Number.parseFloat(value2)) {
        return true;
@@ -76,7 +78,7 @@
    function testMultiplikasjon() {
      const fem = new NorskKrone(5); // må definere fem på nytt
      fem.ganger(2);
-     return assertEquals(11, fem.belop); // må definere metoden
+     return assertEquals("10", fem.belop); // må definere metoden
    }
    console.log(testMultiplikasjon());
 
