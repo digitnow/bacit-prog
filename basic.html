@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basics</title>
+    <style>
+     /* Her kan stil defineres (vi skal bruke Cascading Style Sheets) */
+    </style>
+ <!--
+
+    [[[[[[[[     [[[[[[[[        [[[[   [[[[   [[[[  [[[[
+    [::::::[    [::[             [::[   [::[   [::[  [::[
+      [::[      [::[             [::[   [::[   [::[  [::[
+      [::[       [::::[   [[[[   [::[   [::[   [[[[[[[[[[
+      [::[          [::[         [::[   [::[         [::[
+    [::::::[        [::[         [::[   [::[         [::[
+    [[[[[[[[   [[[[[[[[          [[[[   [[[[         [[[[
+
+ -->
+</head>
+<body>
+  <!-- Her skrives alt innhold, som man ønsker å "tegne" på skjermen. -->
+
+  <script>
+   // Her skrives kode i JavaScript som "gir liv" til bilde på skjermen.
+   // pris_fly er i norske kroner
+   let pris_fly = 3000;
+   let antall_reisende = 3;
+   let pris_total = pris_fly * antall_reisende;
+
+   function assertPrisTotal(pris_fly, antall_reisende, hevde_pris_total) {
+      if (Math.round(pris_fly) * antall_reisende === hevde_pris_total) {
+         return true;
+      } else {
+         return false;
+      }
+   }
+
+   console.log(assertPrisTotal(3000, 3, 9000));
+   console.log(assertPrisTotal(3000.5, 3, 9000));
+
+   // Modellen for valuta-applikasjon
+   //
+   // (1) vi trenger å kunne legge sammen beløp
+   // i forskjellige valutaer og konvertere resultatet
+   // til en valuta gitt et sett av valutakurser
+   //
+   // (2) vi trenger å multiplisere et beløp med et heltall
+   // (antall) og få et kalkulert beløp
+   class NorskKrone {
+     constructor(belop) {
+       this.belop = belop;
+     }
+     ganger(faktor) {
+       this.belop = this.belop * faktor;
+     }
+   }
+   const fem = new NorskKrone(5);
+   console.log(fem.belop);
+   fem.ganger(2);
+   console.log(fem.belop);
+
+   // Test funksjon
+   function assertEquals(value1, value2) {
+     if (Number.parseFloat(value1) == Number.parseFloat(value2)) {
+       return true;
+     } else {
+       //return false;
+       console.error(`the ${value1} is not equal to ${value2}`);
+       return false;
+     }
+   }
+
+   function testMultiplikasjon() {
+     const fem = new NorskKrone(5); // må definere fem på nytt
+     fem.ganger(2);
+     return assertEquals(11, fem.belop); // må definere metoden
+   }
+   console.log(testMultiplikasjon());
+
+  </script>
+</body>
+</html>
