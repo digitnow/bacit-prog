@@ -18,6 +18,7 @@ MS Windows med ";".
 ..\bacit-prog\java>java -cp .;junit-4.13.2.jar;hamcrest-core-1.3.jar bacit.junit.TestRunner
 ```
 # Mappestruktur
+"jar"-filene lastes ikke opp til repository (se .gitignore)
 ```
 ..\bacit-prog\java\
 -------------------junit-4.13.2.jar
